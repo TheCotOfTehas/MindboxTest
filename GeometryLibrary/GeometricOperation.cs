@@ -44,6 +44,20 @@ namespace GeometryLibrary
             return Math.Round( Math.PI * radius * radius,  3);
         }
 
+        public static bool IsRightTriangle(double side1, double side2, double side3)
+        {
+            if (side1 * side1 == side2 * side2 + side3 * side3)
+                return true;
+
+            if (side2 * side2 == side1 * side1 + side3 * side3)
+                return true;
+
+            if (side3 * side3 == side1 * side1 + side2 * side2)
+                return true;
+
+            return false;
+        }
+
         /// <summary>
         /// 
         /// </summary>

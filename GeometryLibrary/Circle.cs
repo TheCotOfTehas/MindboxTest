@@ -11,21 +11,22 @@ namespace GeometryLibrary
     /// <summary>
     /// Описание фигуры круг
     /// </summary>
-    public class Circle : GeometricShape
+    public class Circle : CreatorGeometricShape
     {
-        private readonly double radius;
+        public double Radius { get; }
 
         public Circle(double radius)
         {
             if (radius <= 0)
                 throw new ArgumentException("radius not be less zero", nameof(radius));
 
-            this.radius = radius;
+            this.Radius = radius;
+            NameShape = "Circle";
         }
 
         public override double GetArea()
         {
-            return GetAreaCircle(radius);
+            return GetAreaCircle(Radius);
         }
 
         public override string GetName()
@@ -34,7 +35,7 @@ namespace GeometryLibrary
         }
         public override string ToString()
         {
-            return String.Format("Circle with radius {0}", radius);
+            return String.Format("Circle with radius {0}", Radius);
         }
     }
 }

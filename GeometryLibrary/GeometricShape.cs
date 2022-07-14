@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace GeometryLibrary
 {
-    //Класс который описывает геометрическую фигуру
-    public abstract class GeometricShape
+    //Класс для создания геометрическую фигуру
+    //Его можно расширить в зависимости от нееобходимости
+    //Я просто не знаю что ещё добавить. С другой стороны лишнего лучше не придумывать
+    //Не знаю можно ли это назвать Factory Method -я читал патерн такой есть.
+    //Это к пометке "Легкость добавления других фигур"
+    public abstract class CreatorGeometricShape : IGetArea
     {
+        //По умолчанию будет "Имя не присвоено";
+        public string NameShape { get; set; } = "Имя не присвоено";
         //метод который естьь но переопределять не обязательно, он будет по дефолту
         public virtual string GetName()
         {

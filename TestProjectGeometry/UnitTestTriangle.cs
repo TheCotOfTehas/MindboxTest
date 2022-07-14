@@ -21,7 +21,7 @@ namespace TestProjectGeometry
 
             Assert.Throws<ArgumentException>(() =>
             {
-                var rectangle = new Triangle(5, 0 , 4);
+                var rectangle = new Triangle(5, 0, 4);
             });
 
             Assert.Throws<ArgumentException>(() =>
@@ -61,6 +61,13 @@ namespace TestProjectGeometry
             {
                 var rectangle = new Triangle(1, 2, 3);
             });
+        }
+
+        [Fact]
+        public void IsRightTriangle()
+        {
+            var triangle = new Triangle(3, 4, 5);
+            Assert.True(triangle.IsRightTriangle);
         }
     }
 }

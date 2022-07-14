@@ -10,11 +10,12 @@ namespace GeometryLibrary
     /// <summary>
     /// Описание класса фигуры треугольник
     /// </summary>
-    public class Triangle : GeometricShape
+    public class Triangle : CreatorGeometricShape
     {
-        private  readonly double side1;
-        private readonly double side2;
-        private readonly double side3;
+        public double Side1 { get; }
+        public double Side2 { get; }
+        public double Side3 { get; }
+        public bool IsRightTriangle { get; }
         public Triangle(double side1, double side2, double side3)
         {
             if (side1 <= 0)
@@ -29,13 +30,15 @@ namespace GeometryLibrary
             if (WrongTriangle(side1, side2, side3))
                 throw new InvalidOperationException("WrongTriangle");
 
-            this.side1 = side1;
-            this.side2 = side2;
-            this.side3 = side3;
+            this.Side1 = side1;
+            this.Side2 = side2;
+            this.Side3 = side3;
+            IsRightTriangle = IsRightTriangle(side1, side2, side3);
+            NameShape = "Triangle";
         }
         public override double GetArea()
         {
-            return GetAreaTriangle(side1, side2, side3);
+            return GetAreaTriangle(Side1, Side2, Side3);
         }
     }
 }
