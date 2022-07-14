@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GeometryLibrary
 {
-    internal class Triangle
+    internal class Triangle : GeometricShape
     {
+        public override double GetArea()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

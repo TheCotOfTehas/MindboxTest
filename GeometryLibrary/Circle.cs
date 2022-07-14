@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GeometryLibrary
 {
-    internal class Circle
+    internal class Circle : GeometricShape
     {
+        public override double GetArea()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

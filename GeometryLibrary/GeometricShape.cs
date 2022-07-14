@@ -8,6 +8,10 @@ namespace GeometryLibrary
 {
     public abstract class GeometricShape
     {
-        GetAt
+        public virtual string GetName()
+        {
+            return "Shape: not Name";
+        }
+        public abstract double GetArea();
     }
 }
