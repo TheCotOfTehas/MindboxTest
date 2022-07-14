@@ -1,4 +1,4 @@
-namespace xUnitTest
+namespace TestProjectGeometry
 {
     public class UnitTest1
     {
