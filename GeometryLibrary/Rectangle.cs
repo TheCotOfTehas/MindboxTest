@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GeometryLibrary.GeometricOperation;
 
 namespace GeometryLibrary
 {
+    /// <summary>
+    /// Описание фигуры прямоугольник
+    /// </summary>
     public class Rectangle : GeometricShape
     {
-        private double side1;
-        private double side2;
+        //Можно задать прямоугольник по разному. Стартовая верхняя левая точка (координаты)
+        //и ширина, высота. Тут думаю нужно уточнить что от меня хотят. Для вычесления то что есть достаточно
+        private readonly double side1;
+        private readonly double side2;
 
         public Rectangle(double side1, double side2)
         {
@@ -25,7 +31,7 @@ namespace GeometryLibrary
 
         public override double GetArea()
         {
-            return side1 * side2;
+            return GetAreaRectangle(side1, side2);
         }
 
         public override string GetName()
