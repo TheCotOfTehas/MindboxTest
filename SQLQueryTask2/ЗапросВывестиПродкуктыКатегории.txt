@@ -1,0 +1,4 @@
+SELECT products.title [Имя продукта], category.title [Имя категории]
+FROM Products products
+LEFT JOIN ProdToCateg prodToCateg ON products.id = prodToCateg.products_id
+LEFT JOIN Сategory category ON category.id = prodToCateg.category_id;

@@ -1,0 +1,4 @@
+CREATE TABLE ProdToCateg (
+	id int  NOT NULL    IDENTITY    PRIMARY KEY,
+	products_id  INT not null,
+	category_id INT );
