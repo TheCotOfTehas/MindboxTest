@@ -13,7 +13,7 @@ namespace GeometryLibrary
     public class GeometricOperation
     {
         /// <summary>
-        /// 
+        /// Получить площадь прямоугольника
         /// </summary>
         /// <param name="lengtSide1">Длинна первой стороны прямоугольника</param>
         /// <param name="lengtSide2">Длинна второй стороны прямоугольника</param>
@@ -31,7 +31,7 @@ namespace GeometryLibrary
         }
 
         /// <summary>
-        /// 
+        /// Получить площадь круга
         /// </summary>
         /// <param name="radius">Радиус круга</param>
         /// <returns></returns>
@@ -44,6 +44,13 @@ namespace GeometryLibrary
             return Math.Round( Math.PI * radius * radius,  3);
         }
 
+        /// <summary>
+        /// Метод проверки треугольника на наличии прямого угла
+        /// </summary>
+        /// <param name="lengtSide1"></param>
+        /// <param name="lengtSide2"></param>
+        /// <param name="lengtSide3"></param>
+        /// <returns></returns>
         public static bool IsRightTriangle(double side1, double side2, double side3)
         {
             if (side1 * side1 == side2 * side2 + side3 * side3)
@@ -59,7 +66,7 @@ namespace GeometryLibrary
         }
 
         /// <summary>
-        /// 
+        /// Получить площадь треугольника
         /// </summary>
         /// <param name="lengtSide1">Длинна первой стороны треугольника</param>
         /// <param name="lengtSide2">Длинна второй стороны треугольника</param>
