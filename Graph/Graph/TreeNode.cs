@@ -36,9 +36,9 @@ namespace Graph
             Children.Add(node);
         }
 
-        IEnumerable<TreeNode> GetAllNodes(TreeNode node)
-        {
+        //IEnumerable<TreeNode> GetAllNodes(TreeNode node)
+        //{
 
-        }
+        //}
     }
 }
