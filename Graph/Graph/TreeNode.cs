@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace Graph
 {
+    /// <summary>
+    /// Примерное описание триноды
+    /// </summary>
     internal class TreeNode
     {
-        char Name { get; set; }
-        public readonly List<TreeNode> Children = new List<TreeNode>();
+        public char Name { get; set; }
+        private readonly List<TreeNode> Children = new List<TreeNode>();
 
         public TreeNode(char name)
         {
             Name = name;
         }
 
-        public IEnumerable<TreeNode> IncidentNodes
+        public IEnumerable<TreeNode> ChildrenNodes
         {
             get
             {
@@ -36,9 +39,29 @@ namespace Graph
             Children.Add(node);
         }
 
-        //IEnumerable<TreeNode> GetAllNodes(TreeNode node)
-        //{
+        /// <summary>
+        /// Получить все ChildrenNodes включая вложенных путём поиск в ширину
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
 
-        //}
+        private static IEnumerable<TreeNode> GetAllNodes(TreeNode node)
+        {
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            List<TreeNode> allNodes = new();
+            queue.Enqueue(node);
+
+            while(queue.Count > 0)
+            {
+                var treeNode = queue.Dequeue();
+                allNodes.Add(treeNode);
+
+                foreach (var item in treeNode.ChildrenNodes)
+                    queue.Enqueue(item);
+            }
+
+            return allNodes;
+
+        }
     }
 }

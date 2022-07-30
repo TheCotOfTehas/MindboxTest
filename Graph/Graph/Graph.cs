@@ -9,7 +9,5 @@ namespace Graph
     internal class Graph
     {
         public readonly List<TreeNode> Nodes = new List<TreeNode>();
-
-
     }
 }
